@@ -142,14 +142,18 @@
 
       //oppgave 1 - Når brukeren trykker på en av heltene, skal helten angripe dragen
       // skal komme en alert hvor det står: “(Heltens name) har gjort (heltens damage) skade på (Dragens name)!”
-      //Dragens liv (currentHP-variabelen) skal bli trukket med heltens damage, avhengig av hvilken helt den ble angrepet av.
-      // Dragens currentHP blir oppdatert
+
+      // let currentHP = dragonStats[(currentHP -= hero.damage)];
+      // alert(currentHP);
 
       healer.onclick = function () {
         const hero = heroesArray[0];
         alert(
           `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
         );
+        dragonStats.currentHP -= hero.damage;
+        let currentHP = dragonStats.currentHP;
+        dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
       };
 
       archer.onclick = function () {
@@ -157,6 +161,9 @@
         alert(
           `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
         );
+        dragonStats.currentHP -= hero.damage;
+        let currentHP = dragonStats.currentHP;
+        dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
       };
 
       warrior.onclick = function () {
@@ -164,7 +171,13 @@
         alert(
           `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
         );
+        dragonStats.currentHP -= hero.damage;
+        let currentHP = dragonStats.currentHP;
+        dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
       };
+
+      //Dragens liv (currentHP-variabelen) skal bli trukket med heltens damage, avhengig av hvilken helt den ble angrepet av.
+      // Dragens currentHP blir oppdatert
     </script>
   </body>
 </html>
