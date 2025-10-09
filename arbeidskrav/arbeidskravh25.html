@@ -142,11 +142,10 @@
 
       //oppgave 1 - Når brukeren trykker på en av heltene, skal helten angripe dragen
       // skal komme en alert hvor det står: “(Heltens name) har gjort (heltens damage) skade på (Dragens name)!”
+      //Dragens liv (currentHP-variabelen) skal bli trukket med heltens damage, avhengig av hvilken helt den ble angrepet av.
+      // Dragens currentHP blir oppdatert
 
-      // let currentHP = dragonStats[(currentHP -= hero.damage)];
-      // alert(currentHP);
-
-      healer.onclick = function () {
+      healer.onclick = function heroAttack() {
         const hero = heroesArray[0];
         alert(
           `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
@@ -154,9 +153,10 @@
         dragonStats.currentHP -= hero.damage;
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
+        randomNumber();
       };
 
-      archer.onclick = function () {
+      archer.onclick = function heroAttack() {
         const hero = heroesArray[1];
         alert(
           `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
@@ -164,9 +164,10 @@
         dragonStats.currentHP -= hero.damage;
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
+        randomNumber();
       };
 
-      warrior.onclick = function () {
+      warrior.onclick = function heroAttack() {
         const hero = heroesArray[2];
         alert(
           `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
@@ -174,10 +175,20 @@
         dragonStats.currentHP -= hero.damage;
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
+        randomNumber();
       };
 
-      //Dragens liv (currentHP-variabelen) skal bli trukket med heltens damage, avhengig av hvilken helt den ble angrepet av.
-      // Dragens currentHP blir oppdatert
+      function randomNumber() {
+        let heroNumber = Math.floor(Math.random() * 3 + 1);
+
+        if (heroNumber === 1) {
+          alert("angrip helt nummer 1");
+        } else if (heroNumber === 2) {
+          alert("angrip helt nummer 2");
+        } else if (heroNumber === 3) {
+          alert("angrip helt nummer 3");
+        }
+      }
     </script>
   </body>
 </html>
