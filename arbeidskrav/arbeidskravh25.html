@@ -139,6 +139,32 @@
       const dragonHealthBar = document.getElementById("dragon-health");
 
       //Her kommer din kode! :o
+
+      //oppgave 1 - Når brukeren trykker på en av heltene, skal helten angripe dragen
+      // skal komme en alert hvor det står: “(Heltens name) har gjort (heltens damage) skade på (Dragens name)!”
+      //Dragens liv (currentHP-variabelen) skal bli trukket med heltens damage, avhengig av hvilken helt den ble angrepet av.
+      // Dragens currentHP blir oppdatert
+
+      healer.onclick = function () {
+        const hero = heroesArray[0];
+        alert(
+          `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
+        );
+      };
+
+      archer.onclick = function () {
+        const hero = heroesArray[1];
+        alert(
+          `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
+        );
+      };
+
+      warrior.onclick = function () {
+        const hero = heroesArray[2];
+        alert(
+          `${hero.name} har gjort ${hero.damage} skade på ${dragonStats.name}`
+        );
+      };
     </script>
   </body>
 </html>
