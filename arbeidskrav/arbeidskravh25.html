@@ -179,14 +179,25 @@
       };
 
       function randomNumber() {
-        let heroNumber = Math.floor(Math.random() * 3 + 1);
+        let heroNumber = Math.floor(Math.random() * 3);
 
-        if (heroNumber === 1) {
-          alert("angrip helt nummer 1");
+        const hero = heroesArray[heroNumber];
+
+        if (heroNumber === 0) {
+          alert(`Dragen har angrepet ${hero.name}`);
+          hero.currentHP -= dragonStats.damage;
+          alert(hero.currentHP);
+          healerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
+        } else if (heroNumber === 1) {
+          alert(`Dragen har angrepet ${hero.name}`);
+          hero.currentHP -= dragonStats.damage;
+          alert(hero.currentHP);
+          archerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
         } else if (heroNumber === 2) {
-          alert("angrip helt nummer 2");
-        } else if (heroNumber === 3) {
-          alert("angrip helt nummer 3");
+          alert(`Dragen har angrepet ${hero.name}`);
+          hero.currentHP -= dragonStats.damage;
+          alert(hero.currentHP);
+          warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
         }
       }
     </script>
