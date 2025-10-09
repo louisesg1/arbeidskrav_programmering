@@ -186,20 +186,24 @@
         if (heroNumber === 0) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
-          alert(hero.currentHP);
           healerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
         } else if (heroNumber === 1) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
-          alert(hero.currentHP);
           archerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
         } else if (heroNumber === 2) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
-          alert(hero.currentHP);
           warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
         }
       }
+
+      //   if(dragonStats.currentHP >= 0, alle hero alive = false ){
+      //       alert(`Spillet er tapt! ${dragonStats.name} har vunnet!`)
+      //   };
+      //   if(dragonStats.currentHP <= 0, ikke alle helter er døde){
+      //       alert("Gratulerer, du har vunnet spillet")
+      //   };
     </script>
   </body>
 </html>
