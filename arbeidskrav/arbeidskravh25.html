@@ -204,6 +204,8 @@
         for (let i = 0; i < heroesArray.length; i++) {
           if (heroesArray[i].currentHP <= 0) {
             gameOver();
+            alert("game is over");
+            break;
           }
         }
       }
