@@ -200,9 +200,35 @@
         }
       }
 
-      //   if(dragonStats.currentHP >= 0, alle hero alive = false ){
+      function isGameOver() {
+        for (let i = 0; i < heroesArray.length; i++) {
+          if (heroesArray[i].currentHP <= 0) {
+            gameOver();
+          }
+        }
+      }
+
+      function gameOver() {
+        alert("Spillet er tapt");
+      }
+
+      isGameOver();
+
+      //   isAlive();
+
+      //   if(dragonStats.currentHP >= 0, alle hero alive = false){
       //       alert(`Spillet er tapt! ${dragonStats.name} har vunnet!`)
       //   };
+
+      // switch (gameStatus) {
+      //   case "true":
+      //     alert;
+      //     break;
+      //   case "false":
+      //     labOut.innerHTML = "Nei, hunder sikler sånn";
+      //     break;
+      // }
+
       //   if(dragonStats.currentHP <= 0, ikke alle helter er døde){
       //       alert("Gratulerer, du har vunnet spillet")
       //   };
