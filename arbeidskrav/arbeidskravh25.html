@@ -198,6 +198,7 @@
           hero.currentHP -= dragonStats.damage;
           warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
         }
+        isGameOver();
       }
 
       function isGameOver() {
@@ -206,20 +207,17 @@
             heroesArray[i].alive = false;
           }
         }
+        if (
+          !heroesArray[0].alive &&
+          !heroesArray[1].alive &&
+          !heroesArray[2].alive
+        ) {
+          gameOver();
+        }
       }
 
       function gameOver() {
         alert("Spillet er tapt");
-      }
-
-      isGameOver();
-
-      if (
-        !heroesArray[0].alive &&
-        !heroesArray[1].alive &&
-        !heroesArray[2].alive
-      ) {
-        gameOver();
       }
 
       //   isAlive();
@@ -233,7 +231,7 @@
       //     alert;
       //     break;
       //   case "false":
-      //     labOut.innerHTML = "Nei, hunder sikler sånn";
+      //     labOut.innerHTML = "output";
       //     break;
       // }
 
