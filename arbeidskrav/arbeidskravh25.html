@@ -142,11 +142,7 @@
 
       //Her kommer din kode! :o
 
-      //oppgave 1 - Når brukeren trykker på en av heltene, skal helten angripe dragen
-      // skal komme en alert hvor det står: “(Heltens name) har gjort (heltens damage) skade på (Dragens name)!”
-      //Dragens liv (currentHP-variabelen) skal bli trukket med heltens damage, avhengig av hvilken helt den ble angrepet av.
-      // Dragens currentHP blir oppdatert
-
+      //oppgave 1 + starter funksjonen til oppg 2
       healer.onclick = function heroAttack() {
         const hero = heroesArray[0];
         alert(
@@ -180,28 +176,39 @@
         dragonAttack();
       };
 
+      //oppgave 2 + tillegsoppgave 1 + starter funksjonen til oppg 3 & 4
       function dragonAttack() {
         let heroNumber = Math.floor(Math.random() * 3);
 
         const hero = heroesArray[heroNumber];
 
-        if (heroNumber === 0) {
+        if (heroNumber === 0 && hero.currentHP > 0) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
           healerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
-        } else if (heroNumber === 1) {
+        } else if (heroNumber === 1 && hero.currentHP > 0) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
           archerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
-        } else if (heroNumber === 2) {
+        } else if (heroNumber === 2 && hero.currentHP > 0) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
           warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
         }
         isGameOver();
         isGameWon();
+        removeDragonIfDead();
+        removeHeroIfDead();
       }
 
+      function removeDragonIfDead() {
+        if (dragonStats.currentHP <= 0) {
+          const dragonImg = document.getElementById("dragon-img");
+          dragonImg.remove();
+        }
+      }
+
+      //oppgave 3
       function isGameOver() {
         for (let i = 0; i < heroesArray.length; i++) {
           if (heroesArray[i].currentHP <= 0) {
@@ -218,10 +225,21 @@
         }
       }
 
+      function removeHeroIfDead() {
+        if (!heroesArray[0].alive) {
+          healer.remove();
+        } else if (!heroesArray[1].alive) {
+          archer.remove();
+        } else if (!heroesArray[2].alive) {
+          warrior.remove();
+        }
+      }
+
       function gameOver() {
         alert(`Spillet er tapt! ${dragonStats.name} har vunnet!`);
       }
 
+      //oppgave 4
       function isGameWon() {
         switch (true) {
           case dragonStats.currentHP <= 0 && heroesArray[0].alive:
