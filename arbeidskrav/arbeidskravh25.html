@@ -188,15 +188,15 @@
         if (heroNumber === 0) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
-          healerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
+          healerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
         } else if (heroNumber === 1) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
-          archerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
+          archerHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
         } else if (heroNumber === 2) {
           alert(`Dragen har angrepet ${hero.name}`);
           hero.currentHP -= dragonStats.damage;
-          warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP}`;
+          warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
         }
       }
 
@@ -205,9 +205,6 @@
           if (heroesArray[i].currentHP <= 0) {
             gameOver();
             alert("game is over");
-          }
-          else if(){
-
           }
         }
       }
