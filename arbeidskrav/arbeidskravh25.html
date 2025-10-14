@@ -199,6 +199,7 @@
           warriorHealthTxt.innerHTML = `${hero.currentHP} / ${hero.maxHP} HP`;
         }
         isGameOver();
+        isGameWon();
       }
 
       function isGameOver() {
@@ -221,28 +222,21 @@
         alert(`Spillet er tapt! ${dragonStats.name} har vunnet!`);
       }
 
-      function isHeroAlive() {
-        for (let i = 0; i < heroesArray.length; i++) {
-          if (heroesArray[i].currentHP <= 0) {
-          }
+      function isGameWon() {
+        switch (true) {
+          case dragonStats.currentHP <= 0 && heroesArray[0].alive:
+            alert("Spillet er vunnet!");
+            break;
+          case dragonStats.currentHP <= 0 && heroesArray[1].alive:
+            alert("Spillet er vunnet!");
+            break;
+          case dragonStats.currentHP <= 0 && heroesArray[2].alive:
+            alert("Spillet er vunnet!");
+            break;
+          default:
+            isGameOver();
         }
       }
-
-      switch (isHeroAlive) {
-      }
-
-      // switch (gameStatus) {
-      //   case "true":
-      //     alert;
-      //     break;
-      //   case "false":
-      //     labOut.innerHTML = "output";
-      //     break;
-      // }
-
-      //   if(dragonStats.currentHP <= 0, ikke alle helter er døde){
-      //       alert("Gratulerer, du har vunnet spillet")
-      //   };
     </script>
   </body>
 </html>
