@@ -142,6 +142,12 @@
 
       //Her kommer din kode! :o
 
+      //tilleggsfunksjon 3
+      healerName.innerHTML = `${heroesArray[0].name}`;
+      archerName.innerHTML = `${heroesArray[1].name}`;
+      warriorName.innerHTML = `${heroesArray[2].name}`;
+      dragonName.innerHTML = `${dragonStats.name}`;
+
       //oppgave 1 + starter funksjonen til oppg 2
       healer.onclick = function heroAttack() {
         const hero = heroesArray[0];
@@ -151,7 +157,8 @@
         dragonStats.currentHP -= hero.damage;
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
-        randomNumber();
+        dragonAttack();
+        updateProgressBars();
       };
 
       archer.onclick = function heroAttack() {
@@ -162,7 +169,8 @@
         dragonStats.currentHP -= hero.damage;
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
-        randomNumber();
+        dragonAttack();
+        updateProgressBars();
       };
 
       warrior.onclick = function heroAttack() {
@@ -174,9 +182,10 @@
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
         dragonAttack();
+        updateProgressBars();
       };
 
-      //oppgave 2 + tillegsoppgave 1 + starter funksjonen til oppg 3 & 4
+      //oppgave 2 + tillegsoppgave 1 & 3 + starter funksjonen til oppg 3 & 4
       function dragonAttack() {
         let heroNumber = Math.floor(Math.random() * 3);
 
@@ -199,6 +208,7 @@
         isGameWon();
         removeDragonIfDead();
         removeHeroIfDead();
+        updateHealthBar();
       }
 
       function removeDragonIfDead() {
@@ -225,6 +235,7 @@
         }
       }
 
+      //tilleggsfunksjon 1 forts.
       function removeHeroIfDead() {
         if (!heroesArray[0].alive) {
           healer.remove();
