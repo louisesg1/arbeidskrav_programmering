@@ -203,16 +203,23 @@
       function isGameOver() {
         for (let i = 0; i < heroesArray.length; i++) {
           if (heroesArray[i].currentHP <= 0) {
-            gameOver();
-            alert("game is over");
+            heroesArray[i].alive = false;
           }
         }
       }
 
-      isGameOver();
-
       function gameOver() {
         alert("Spillet er tapt");
+      }
+
+      isGameOver();
+
+      if (
+        !heroesArray[0].alive &&
+        !heroesArray[1].alive &&
+        !heroesArray[2].alive
+      ) {
+        gameOver();
       }
 
       //   isAlive();
