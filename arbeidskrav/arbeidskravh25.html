@@ -177,10 +177,10 @@
         dragonStats.currentHP -= hero.damage;
         let currentHP = dragonStats.currentHP;
         dragonHealthTxt.innerHTML = `${currentHP} / ${dragonStats.maxHP} HP`;
-        randomNumber();
+        dragonAttack();
       };
 
-      function randomNumber() {
+      function dragonAttack() {
         let heroNumber = Math.floor(Math.random() * 3);
 
         const hero = heroesArray[heroNumber];
@@ -210,21 +210,26 @@
         if (
           !heroesArray[0].alive &&
           !heroesArray[1].alive &&
-          !heroesArray[2].alive
+          !heroesArray[2].alive &&
+          dragonStats.currentHP > 0
         ) {
           gameOver();
         }
       }
 
       function gameOver() {
-        alert("Spillet er tapt");
+        alert(`Spillet er tapt! ${dragonStats.name} har vunnet!`);
       }
 
-      //   isAlive();
+      function isHeroAlive() {
+        for (let i = 0; i < heroesArray.length; i++) {
+          if (heroesArray[i].currentHP <= 0) {
+          }
+        }
+      }
 
-      //   if(dragonStats.currentHP >= 0, alle hero alive = false){
-      //       alert(`Spillet er tapt! ${dragonStats.name} har vunnet!`)
-      //   };
+      switch (isHeroAlive) {
+      }
 
       // switch (gameStatus) {
       //   case "true":
